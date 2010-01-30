@@ -12,6 +12,15 @@ public class Design extends Item
 		super(name);
 	}
 
+	public Design(String name, int rarity) {
+		super(name, 0, rarity);
+	}
+
+	public Design(String name, int rarity, boolean needsToProc) {
+		super(name, 0, rarity);
+		this.needsToProc = true;
+	}
+
 	public void addRequired( int amount, Item item )
 	{
 		requiredMaterials.add( new MaterialRequirement( amount, item ) );

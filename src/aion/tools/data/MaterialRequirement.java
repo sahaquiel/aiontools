@@ -1,6 +1,6 @@
 package aion.tools.data;
 
-public class MaterialRequirement
+public class MaterialRequirement implements ItemGetter
 {
 	public int amount;
 	public Item material;
@@ -20,11 +20,18 @@ public class MaterialRequirement
 	{
 		return material.price * amount;
 	}
-	
+
 	public boolean equals( Object o )
 	{
+		// we equal is our base material equals.
+		// The amount is irrelevant for that.
 		MaterialRequirement mr = (MaterialRequirement) o;
-		
-		return ( mr.material.equals(this.material) );
+		return ( mr.getItem().equals( this.getItem() ) );
 	}
+	
+	@Override
+	public Item getItem()
+	{
+		return this.material;
+	}	
 }
