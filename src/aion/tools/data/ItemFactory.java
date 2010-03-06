@@ -87,6 +87,9 @@ public class ItemFactory
 		m = new Item( "Worthy Major Armor Flux", 3500, Item.UNCOMMON );
 		m_map.put( m.name, m );
 
+		m = new Item( "Worthy Premium Armor Flux", 0, Item.UNCOMMON );
+		m_map.put( m.name, m );
+
 		m = new Item( "Export Fine Armor Flux", 0, Item.HEROIC );
 		m_map.put( m.name, m );
 
@@ -102,13 +105,25 @@ public class ItemFactory
 		m = new Item( "Aether Gem", 1640 );
 		m_map.put( m.name, m );
 		
+		m = new Item( "Greater Aether", 0, Item.UNCOMMON );
+		m_map.put( m.name, m );
+		
 		m = new Item( "Greater Leather Hardener", 200 );
+		m_map.put( m.name, m );
+		
+		m = new Item( "Major Leather Hardener", 808 );
 		m_map.put( m.name, m );
 		
 		m = new Item( "Greater Elemental Stone", 400 );
 		m_map.put( m.name, m );
 		
+		m = new Item( "Greater Orichalcum Ore", 0, Item.UNCOMMON );
+		m_map.put( m.name, m );
+		
 		m = new Item( "Strong Rawhide", 450 );
+		m_map.put( m.name, m );
+		
+		m = new Item( "Tough Rawhide", 0 );
 		m_map.put( m.name, m );
 		
 		m = new Item( "Xilix Fiber", 0 );
@@ -139,6 +154,20 @@ public class ItemFactory
 		m = new Design( "Strong Luxury Leather Pad", Item.UNCOMMON, true );
 		m.addRequired( 2, getByName( "Strong Leather" ) );
 		m.addRequired( 2, getByName( "Greater Leather Hardener" ) );
+		m_map.put( m.name, m );
+
+		m = new Design( "Tough Leather" );
+		m.addRequired( 1, getByName( "Tough Rawhide" ) );
+		m_map.put( m.name, m );
+		
+		m = new Design( "Tough Leather Cord" );
+		m.addRequired( 1, getByName( "Tough Leather" ) );
+		m.addRequired( 1, getByName( "Major Leather Hardener" ) );
+		m_map.put( m.name, m );
+		
+		m = new Design( "Tough Luxury Leather Pad", Item.UNCOMMON, true );
+		m.addRequired( 2, getByName( "Tough Leather" ) );
+		m.addRequired( 2, getByName( "Major Leather Hardener" ) );
 		m_map.put( m.name, m );
 
 		m = new Design( "Xilix Thread" );
@@ -197,6 +226,22 @@ public class ItemFactory
 		d.addRequired( 4, getByName( "Worthy Major Armor Flux" ) );
 		d.addRequired( 4, getByName( "Greater Aether Gem" ) );
 		d.addRequired( 5, getByName( "High-Grade Adamantium Ore" ) );		
+		m_map.put( d.name, d );
+		
+		d = new Design( "Worthy Tough Durable Jerkin", Item.UNCOMMON );
+		d.addRequired( 14, getByName( "Tough Luxury Leather Pad" ) );
+		d.addRequired( 54, getByName( "Tough Leather Cord" ) );
+		d.addRequired( 4, getByName( "Worthy Premium Armor Flux" ) );
+		d.addRequired( 11, getByName( "Greater Aether" ) );
+		d.addRequired( 16, getByName( "Greater Orichalcum Ore" ) );		
+		m_map.put( d.name, d );
+		
+		d = new Design( "Worthy Noble Tough Durable Jerkin", Item.HEROIC, true );
+		d.addRequired( 14, getByName( "Tough Luxury Leather Pad" ) );
+		d.addRequired( 54, getByName( "Tough Leather Cord" ) );
+		d.addRequired( 4, getByName( "Worthy Premium Armor Flux" ) );
+		d.addRequired( 11, getByName( "Greater Aether" ) );
+		d.addRequired( 16, getByName( "Greater Orichalcum Ore" ) );		
 		m_map.put( d.name, d );
 		
 		d = new Design( "Worthy Strong Leather Gloves", Item.UNCOMMON );		
